@@ -18,12 +18,10 @@ public class Result03 {
 		 * */
 	
 		System.out.println("===== 행운의 로또번호 생성기 =====");
-		Set<Integer> weekLotto = makeLotto();
-		for(Set<Integer> sets:weekLotto) {
-			ArrayList<Integer> lotto = new ArrayList<>(sets);
-			Collections.sort(lotto);
-			System.out.println(lotto);
-		}
+		Set<Integer> lotto2 = makeLotto();
+		ArrayList<Integer> weekLotto = new ArrayList<>(lotto2);
+		Collections.sort(weekLotto);
+		System.out.println(weekLotto.toString());
 		System.out.println("===== 행운이 가득하시길~!~! =====");
 		
 		
