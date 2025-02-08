@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Result03 {
 	public static void main(String[] args) {
@@ -18,17 +19,18 @@ public class Result03 {
 		 * */
 	
 		System.out.println("===== 행운의 로또번호 생성기 =====");
-		Set<Integer> lotto2 = makeLotto();
-		ArrayList<Integer> weekLotto = new ArrayList<>(lotto2);
-		Collections.sort(weekLotto);
-		System.out.println(weekLotto.toString());
+		//Set<Integer> lotto2 = makeLotto();
+		//ArrayList<Integer> weekLotto = new ArrayList<>(lotto2);
+		//Collections.sort(weekLotto);
+		//System.out.println(weekLotto.toString());
+		System.out.println(makeLotto());
 		System.out.println("===== 행운이 가득하시길~!~! =====");
 		
 		
 }
 	
 	public static Set<Integer> makeLotto() {
-		Set<Integer> lotto = new HashSet<>();
+		Set<Integer> lotto = new TreeSet<>();
 		//1 ~ 45 사이의 랜덤값 6개 생성
 		while(lotto.size()<6){
 			int num = (int)((Math.random()*45)+1);
