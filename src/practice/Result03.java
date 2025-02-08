@@ -17,10 +17,10 @@ public class Result03 {
 		 * */
 	
 		System.out.println("Q.01 \\n===== 행운의 로또번호 생성기 =====");
-		Set<Integer> lotto2 = makeLotto();
-		ArrayList<Integer> weekLotto = new ArrayList<>(lotto2);
-		Collections.sort(weekLotto);
-		System.out.println(weekLotto.toString());
+		Set<Integer> lottoQ1 = makeLotto();
+		ArrayList<Integer> weekLottoQ1 = new ArrayList<>(lottoQ1);
+		Collections.sort(weekLottoQ1);
+		System.out.println(weekLottoQ1.toString());
 		System.out.println("===== 행운이 가득하시길~!~! =====");
 		
 		
@@ -38,13 +38,13 @@ public class Result03 {
 		System.out.println("희망하는 번호를 입력해주세요");
 		System.out.println("주의! 1~45 사이의 숫자만 입력하세요.(예: 1,5)");
 		System.out.print(">>>>>");
-		Scanner scan = new Scanner(System.in);
-		String nums = scan.nextLine();
-		String[] arr = nums.split(",");
-		Set<Integer> lotto3 = makeLotto(arr);
-		ArrayList<Integer> weekLotto2 = new ArrayList<>(lotto3);
-		Collections.sort(weekLotto2);
-		System.out.println(weekLotto2.toString());
+		Scanner scanQ2= new Scanner(System.in);
+		String numsQ2 = scanQ2.nextLine();
+		String[] arrQ2 = numsQ2.split(",");
+		Set<Integer> lottoQ2 = makeLotto(arrQ2);
+		ArrayList<Integer> weekLottoQ2 = new ArrayList<>(lottoQ2);
+		Collections.sort(weekLottoQ2);
+		System.out.println(weekLottoQ2.toString());
 		System.out.println("===== 행운이 가득하시길~!~! =====");
 		
 		
@@ -61,16 +61,16 @@ public class Result03 {
 		System.out.println("Q.03 \n===== 행운의 로또번호 생성기 =====");
 		System.out.println("입력 값이 있으면 'y', 전체 자동으로 선택하려면 'n'을 선택하세요");
 		System.out.print(">>>>>");
-		Scanner scan_Q3 = new Scanner(System.in);
-		String answer = scan_Q3.nextLine();
-		if(answer == "n") {
+		Scanner scanQ3 = new Scanner(System.in);
+		String answer = scanQ3.nextLine();
+		if(answer.equals("n")) {
 			Set<Integer> lottoQ3n = makeLotto();
 			ArrayList<Integer> weekLottoQ3n = new ArrayList<>(lottoQ3n);
 			Collections.sort(weekLottoQ3n);
 			System.out.println(weekLottoQ3n.toString());
 				
-		} else if(answer =="y") {
-			System.out.println("번호를 한칸씩 띄어서 입력해주세요. 최대 6개)");
+		} else if(answer.equals("y")) {
+			System.out.println("번호를 한칸씩 띄어서 입력해주세요. 최대 6개");
 			System.out.print(">>>>>");
 			Scanner scanQ3y = new Scanner(System.in);
 			String numsQ3 = scanQ3y.nextLine();
@@ -79,9 +79,9 @@ public class Result03 {
 			ArrayList<Integer> weekLottoQ3y = new ArrayList<>(lottoQ3y);
 			Collections.sort(weekLottoQ3y);
 			System.out.println(weekLottoQ3y.toString());
-			System.out.println("===== 행운이 가득하시길~!~! =====");
 			
-		}
+			
+		}System.out.println("===== 행운이 가득하시길~!~! =====");
 		
 		
 
@@ -102,7 +102,7 @@ public class Result03 {
 	
 	public static Set<Integer> makeLotto(String[] strArr) {
 		Set<Integer> lotto2 = new HashSet<>();
-		
+		//사용자가 입력한 숫자를 포함한 로또 생성
 		for(String num : strArr) {
 			int usernum = Integer.parseInt(num);
 			if(usernum < 1|| usernum >45) {
