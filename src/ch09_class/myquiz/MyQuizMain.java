@@ -62,7 +62,7 @@ public class MyQuizMain {
 				score += 1;
 				continue;
 			}
-			System.out.println("땡!! 틀렸습니다. 저에 대해 모르시네요..누구냐 너");
+			System.out.println("땡!! 저에 대해 모르시네요..누구세요...?");
 			
 		}
 		System.out.println("\n당신의 점수는: "+score+"입니다. 결과를 저에게 알려주세요.\n!주작X!(주작 시 우정 박살)");
