@@ -1,15 +1,19 @@
 package ch11_java_api;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
+import java.net.ConnectException;
 import java.net.URL;
+import java.text.DecimalFormat;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.swing.JSeparator;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class ApiJson {
 
@@ -45,11 +49,41 @@ public class ApiJson {
 				System.out.println("kor:"+obj.get("korean_name"));
 				
 			}
-		
+			System.out.println("상세 정보=================");
+			JSONObject resultObj = getCoin("KRW-BTC");
+			System.out.println(resultObj.get("trade_date"));
+			System.out.println(resultObj.get("trade_price"));
+			
+			DecimalFormat format = new DecimalFormat("#,###.##");
+			System.out.println(format.format(resultObj.get("trade_price")));
+			
 		}
-		
 	}
-
+	//input : Stirng (코인코드)
+	//output : JSONObject(해당 코인 현재 정보)
+	public static JSONObject getCoin(String code) throws IOException, ParseException{
+		String detailUrl = "https://api.upbit.com/v1/ticker?markets="+code;
+		URL url = new URL(detailUrl);
+		HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+		conn.setRequestMethod("GET");
+		int resCode = conn.getResponseCode();
+		JSONObject obj = null;
+		if(resCode == 200) {
+			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer res = new StringBuffer();
+			while((inputLine = in.readLine()) != null) {
+				res.append(inputLine);
+			}
+			in.close();
+			JSONParser parser = new JSONParser();
+			JSONArray array = (JSONArray) parser.parse(res.toString());
+			obj = (JSONObject) array.get(0);
+		}
+		return obj;
+	}
+	
+	
 	
 }
 
