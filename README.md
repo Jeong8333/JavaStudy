@@ -1,4 +1,4 @@
 ## JAVA
 ```
-수업에서 배운 내용을 업로드하고, 내용을 응용하여 나만의 문제를 만들어 저장하는 공간입니다.
+ch01_start(https://github.com/Jeong8333/JavaStudy/tree/b97955aaacd12fa20b784a7d841292035571a3a1/src/ch01_start)
 ```
