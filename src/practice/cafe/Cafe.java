@@ -8,10 +8,24 @@ public class Cafe {
 	
 	public Cafe() {
 	}
-
+	
 	public Cafe(String name) {
 		this.name = name;
 	}
+
+	public Cafe(String name, ArrayList<Coffee> menuList) {
+		this.name = name;
+		this.menuList = menuList;
+	}
+
+	@Override
+	public String toString() {
+		return "Cafe [name=" + name + ", menuList=" + menuList + "]";
+	}
+	
+	
+
+	
 	
 	
 	
