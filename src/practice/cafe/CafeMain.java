@@ -3,7 +3,7 @@ package practice.cafe;
 import java.util.Scanner;
 
 public class CafeMain {
-	private void mian() {
+	public static void main(String[] args) {
 		Cafe stb = new Cafe("스타벅스");
 		Cafe aka = new Cafe("아카");
 		
@@ -12,9 +12,9 @@ public class CafeMain {
 		stb.addCoffee("카푸치노", 6000);
 		stb.addCoffee("오곡라떼", 7000);
 		// 아카카페 메뉴
-		stb.addCoffee("아메리카노", 2500);
-		stb.addCoffee("바닐라라떼", 3000);
-		stb.addCoffee("아이스티", 3500);
+		aka.addCoffee("아메리카노", 2500);
+		aka.addCoffee("바닐라라떼", 3000);
+		aka.addCoffee("아이스티", 3500);
 		
 		Scanner scan = new Scanner(System.in);
 		while (true) {
@@ -26,9 +26,12 @@ public class CafeMain {
 				System.out.println("사무실로 복귀합니다...");
 				break;
 			}else if(choice.equals("1")){
+				stb.showMenu();
 				stb.buyCoffee();
 			}else if(choice.equals("2")){
+				aka.showMenu();
 				aka.buyCoffee();
+				
 			}
 		}
 	}

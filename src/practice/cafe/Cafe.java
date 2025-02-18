@@ -21,18 +21,17 @@ public class Cafe {
 	}
 	
 	public void showMenu() {
-		System.out.println("어서오세요 " + name + "입니다.");
+		System.out.println("어서오세요. " + name + " 입니다.");
 		for(int i = 0; i<menuList.size();i++) {
 			Coffee coffee = menuList.get(i);
-			System.out.println((1+i)+"["+ coffee.getName()+":"+coffee.getPrice()+"]");
+			System.out.println((1+i)+". ["+ coffee.getName()+":"+coffee.getPrice()+"]");
 		}
+		System.out.print("메뉴를 선택해주세요: ");
 	}
 	public void buyCoffee() {
 		Scanner scan = new Scanner(System.in);
 		String choice = scan.nextLine();
 		int menu = Integer.parseInt(choice);
-		showMenu();
-		System.out.print("메뉴를 선택해주세요: ");
 		Coffee order = menuList.get(menu - 1);
         System.out.println(order.getName() + "를 " + order.getPrice() + "원에 구매했습니다.");
 		

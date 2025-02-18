@@ -16,7 +16,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class ApiJson {
-
+/*
 	public static void main(String[] args) throws Exception {
 		//upbit rest api 코인 종목 리스트를 제공함. get 방식에 json 데이터 형태로
 		//json(Javascript Object Notation)
@@ -84,6 +84,6 @@ public class ApiJson {
 	}
 	
 	
-	
+*/	
 }
 
