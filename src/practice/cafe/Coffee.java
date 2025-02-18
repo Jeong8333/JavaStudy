@@ -5,8 +5,6 @@ public class Coffee {
 	private int price;	 //가격
 	
 	
-	public Coffee() {
-	}
 
 	public Coffee(String name, int price) {
 		this.name = name;
@@ -33,10 +31,5 @@ public class Coffee {
 		this.price = price;
 	}
 
-
-	@Override
-	public String toString() {
-		return "Coffee [name=" + name + ", price=" + price + "]";
-	}
 	
 }
