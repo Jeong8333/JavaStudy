@@ -11,12 +11,12 @@ public class Casting {
 		int d = (int) c; // 명시적 형변환
 		
 		// 타입 변환
-		// 정수 to 문자열
+		// 정수 to 문자열  String.valueOf
 		int num = 123;
 		String str = String.valueOf(num); // 문자열 타입으로
 		System.out.println(num);
 		
-		// 문자열 to 정수
+		// 문자열 to 정수 Integer.parseInt
 		String str2 = "123";
 		int num2 = Integer.parseInt(str2);
 		System.out.println(num2);
