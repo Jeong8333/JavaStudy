@@ -8,7 +8,7 @@ package ch02_variable;
  * Purpose      : java 기초
  * Description  : 데이터 타입과 상수 
  */
-
+//shift + alt + j  [자동주석]class, method .. 등등 위치에서 누르면됨.
 public class Constant {
 	
 	public static void main(String[] args) {
@@ -44,7 +44,10 @@ public class Constant {
 		
 		String stu = "김길동:20";
 		String stu2 = "남궁민수:30";
-		System.out.println();
+		System.out.println(stu.substring(0,3));
+		System.out.println(stu.substring(4,6));
+		System.out.println(stu2.substring(0,4));
+		System.out.println(stu2.substring(5,7));
 		
 	}
 
