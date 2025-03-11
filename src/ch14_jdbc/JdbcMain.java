@@ -13,7 +13,7 @@ public class JdbcMain {
 	
 	public static void main(String[] args) {
 		while (true) {
-			System.out.print("학사 정보 시스템입니다");
+			System.out.println("학사 정보 시스템입니다.");
 			Scanner sc = new Scanner(System.in);
 			System.out.println("1.조회|2.수정|3.추가(q:종료)");
 			String msg = sc.nextLine();
@@ -25,31 +25,34 @@ public class JdbcMain {
 				// 1.조회는 이름을 입력받아서(like 검색) 다 출력
 				System.out.print("조회할 이름:");
 				String nm = sc.nextLine();
+				
 				selectUser(nm);
 
 			}else if (msg.equalsIgnoreCase("2")) {
 				//2.수정은 취미를 입력받아서 변경되도록
-				System.out.print("수정할 이름:");
+				System.out.print("수정할 학생의 이름:");
 				String changeNm = sc.nextLine();
+				
 				System.out.print("수정할 취미 내용:");
 				String changeHobby = sc.nextLine();
-				hobbyChange(changeNm,changeHobby);
-			}
-			else if (msg.equalsIgnoreCase("3")) {
-				//3.추가 후 저장
-				System.out.print("학생 번호:");
-				String num = sc.nextLine();
 				
-				System.out.print("pc번호:");
-				String pcNum = sc.nextLine();
-				System.out.print("이름:");
-				String insertName = sc.nextLine();
-				System.out.print("영어이름:");
-				String enNm = sc.nextLine();
-				System.out.print("이메일주소:");
-				String email = sc.nextLine();
-				insertInfo(num, pcNum, insertName, enNm, email);
+				hobbyChange(changeNm,changeHobby);
+				selectUser(changeNm);
 			}
+//			else if (msg.equalsIgnoreCase("3")) {
+//				//3.추가 후 저장
+//				System.out.print("학생 번호:");
+//				String num = sc.nextLine();
+//				System.out.print("pc번호:");
+//				String pcNum = sc.nextLine();
+//				System.out.print("이름:");
+//				String insertName = sc.nextLine();
+//				System.out.print("영어이름:");
+//				String enNm = sc.nextLine();
+//				System.out.print("이메일주소:");
+//				String email = sc.nextLine();
+//				insertInfo(num, pcNum, insertName, enNm, email);
+//			}
 			
 		}
 	}
@@ -98,7 +101,7 @@ public class JdbcMain {
 			conn.setAutoCommit(false);
 			StringBuffer query = new StringBuffer();
 			query.append(" UPDATE tb_info");   
-			query.append(" SET hobby =? ");   
+			query.append(" SET hobby =? ");
 			query.append(" WHERE nm =? ");   
 			ps = conn.prepareStatement(query.toString());
 			ps.setString(1, hobby);
