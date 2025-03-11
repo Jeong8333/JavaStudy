@@ -22,16 +22,15 @@ public class CafeMain {
 			System.out.println("1.스타벅스 방문 |2.아카 방문 |3.사무실 복귀");
 			System.out.print(">>> ");
 			String choice = scan.nextLine();
-			if(choice.equals("3")) {
-				System.out.println("사무실로 복귀합니다...");
-				break;
-			}else if(choice.equals("1")){
+			if(choice.equals("1")){
 				stb.showMenu();
 				stb.buyCoffee();
 			}else if(choice.equals("2")){
 				aka.showMenu();
 				aka.buyCoffee();
-				
+			}else {
+				System.out.println("사무실로 복귀합니다...");
+				break;
 			}
 		}
 	}

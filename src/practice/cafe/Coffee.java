@@ -4,6 +4,12 @@ public class Coffee {
 	private String name; //메뉴명
 	private int price;	 //가격
 	
+	
+	
+	public Coffee() {
+		super();
+	}
+
 	public Coffee(String name, int price) {
 		this.name = name;
 		this.price = price;
@@ -16,9 +22,6 @@ public class Coffee {
 	public int getPrice() {
 		return price;
 	}
-
-	
-
 
 	
 }

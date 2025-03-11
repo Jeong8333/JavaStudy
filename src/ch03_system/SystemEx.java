@@ -3,6 +3,9 @@ package ch03_system;
 import java.util.Scanner;
 
 public class SystemEx {
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		/* 1. 사용자의 이름:나이를 입력받아
 		 * 이름 출력
