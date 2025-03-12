@@ -29,7 +29,7 @@ public class ConnectionFactory {
 			id = prop.getProperty("id");
 			pw = prop.getProperty("pw");
 			maxConn = Integer.parseInt(prop.getProperty("max"));
-//			System.out.println(id+"|"+pw+"|"+url+"|"+driver+"|"+maxConn);
+			System.out.println(id+"|"+pw+"|"+url+"|"+driver+"|"+maxConn);
 			Class.forName(driver);
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
@@ -39,4 +39,9 @@ public class ConnectionFactory {
 		Connection conn = DriverManager.getConnection(url,id,pw);
 		return conn;
 	}
+	
+	public int getMaxConn() {
+		return maxConn;
+	}
+		
 }	
