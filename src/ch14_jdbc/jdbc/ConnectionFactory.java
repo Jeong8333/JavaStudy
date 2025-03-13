@@ -39,7 +39,16 @@ public class ConnectionFactory {
 		Connection conn = DriverManager.getConnection(url,id,pw);
 		return conn;
 	}
-	
+	public static void main(String[] args) {
+		ConnectionFactory test = ConnectionFactory.getInstance();
+		try {
+			Connection conn = test.getConnection();
+			System.out.println("접속됨");
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	public int getMaxConn() {
 		return maxConn;
 	}
